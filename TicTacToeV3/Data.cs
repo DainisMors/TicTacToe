@@ -9,7 +9,7 @@ namespace TicTacToeV3
     public static class Data
     {
         public static string[] board = { "a", "b", "c", "1", "2", "3" };
-        public static string[] user = { "x", "o"};
+        
         public static string CheckAndOrder(string input)
         {
             int count1 = 0;
