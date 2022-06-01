@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32407.343
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicTacToeV3", "TicTacToeV3.csproj", "{3F5E299A-EF23-4A35-B6F8-43E9BD19F067}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TicTacToeV3", "TicTacToeV3.csproj", "{3F5E299A-EF23-4A35-B6F8-43E9BD19F067}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicTacToeV3.Tests", "..\TicTacToeV3.Tests\TicTacToeV3.Tests.csproj", "{FAE25433-B4DF-4143-9E21-C3F2FCD7E26E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{3F5E299A-EF23-4A35-B6F8-43E9BD19F067}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3F5E299A-EF23-4A35-B6F8-43E9BD19F067}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3F5E299A-EF23-4A35-B6F8-43E9BD19F067}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FAE25433-B4DF-4143-9E21-C3F2FCD7E26E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FAE25433-B4DF-4143-9E21-C3F2FCD7E26E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FAE25433-B4DF-4143-9E21-C3F2FCD7E26E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FAE25433-B4DF-4143-9E21-C3F2FCD7E26E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

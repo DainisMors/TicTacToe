@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace TicTacToeV3
 {
-    static class Data
+    public static class Data
     {
         public static string[] board = { "a", "b", "c", "1", "2", "3" };
         public static string[] user = { "x", "o"};
-        public static string checkAndOrder(string input)
+        public static string CheckAndOrder(string input)
         {
             int count1 = 0;
             int count2 = 0;
@@ -20,12 +20,25 @@ namespace TicTacToeV3
 
             if (input.Length == 2 && input.Substring(0, 1) != input.Substring(1, 1))
             {
-                for (int i = 0; i < board.Length; i++)
+                for (int i = 0; i < board.Length/2; i++)
                 {
                     if (board[i] == input.Substring(0, 1))
                     {
                         count1++;
                         sym1 = input.Substring(0, 1);
+                    }
+                    if (board[i] == input.Substring(1, 1))
+                    {
+                        count1++;
+                        sym1 = input.Substring(1, 1);
+                    }
+                }
+                for (int i = (board.Length/2) - 1; i < board.Length; i++)
+                {
+                    if (board[i] == input.Substring(0, 1))
+                    {
+                        count2++;
+                        sym2 = input.Substring(0, 1);
                     }
                     if (board[i] == input.Substring(1, 1))
                     {
@@ -69,6 +82,7 @@ namespace TicTacToeV3
                 }
                 Console.WriteLine(info);
             }
+            Console.WriteLine("");
         }
 
     }
