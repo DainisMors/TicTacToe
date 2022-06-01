@@ -27,9 +27,8 @@ for (int i = 0; i < (info.Length) * 2; i++)
 
     if (ret.Length == 2)
     {
-        info[1] = ret.Substring(0, 1);
-        info[2] = ret.Substring(1, 1);
-        Console.Clear();
+        info = Data.FillDisplayInfo(info, "x", ret);
+//        Console.Clear();
         Console.WriteLine("");
         Console.WriteLine(displayInfo);
         Console.WriteLine("");

@@ -84,6 +84,38 @@ namespace TicTacToeV3
             }
             Console.WriteLine("");
         }
+        public static string[] FillDisplayInfo(string[] input, string user, string code)
+        {
+            int half = board.Length / 2;
+            int counter = 0;
+
+            for (int i = 0; i < half; i++)
+            {
+                if(code.Substring(0, 1) == board[i])
+                {
+                    for (int i2 = half; i2 < board.Length; i2++)
+                    {
+                        if (code.Substring(1, 1) == board[i2])
+                        {
+                            input[counter] = user;
+                            break;
+                        }
+                    }
+                    counter++;
+                }
+                counter += half; 
+            }
+Console.WriteLine(input[0]);
+Console.WriteLine(input[1]);
+Console.WriteLine(input[2]);
+Console.WriteLine(input[3]);
+            Console.WriteLine(input[4]);
+            Console.WriteLine(input[5]);
+            Console.WriteLine(input[6]);
+            Console.WriteLine(input[7]);
+            Console.WriteLine(input[8]);
+            return input;
+        }
 
     }
 }
