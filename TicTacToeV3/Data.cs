@@ -17,33 +17,38 @@ namespace TicTacToeV3
             string ret = "";
             string sym1 = "";
             string sym2 = "";
+            string sym01 = input.Substring(0, 1);
+            string sym02 = input.Substring(1, 1);
 
-            if (input.Length == 2 && input.Substring(0, 1) != input.Substring(1, 1))
+            if (input.Length == 2 && sym01 != sym02)
             {
-                for (int i = 0; i < board.Length/2; i++)
+                for (int i = 0; i < board.Length; i++)
                 {
-                    if (board[i] == input.Substring(0, 1))
+                    if (board[i] == sym01)
                     {
-                        count1++;
-                        sym1 = input.Substring(0, 1);
+                        if (i >= board.Length/2)
+                        {
+                            sym2 = sym01;
+                            count2++;
+                        }
+                        else
+                        {
+                            sym1 = sym01;
+                            count1++;
+                        }
                     }
-                    if (board[i] == input.Substring(1, 1))
+                    if (board[i] == sym02)
                     {
-                        count1++;
-                        sym1 = input.Substring(1, 1);
-                    }
-                }
-                for (int i = (board.Length/2) - 1; i < board.Length; i++)
-                {
-                    if (board[i] == input.Substring(0, 1))
-                    {
-                        count2++;
-                        sym2 = input.Substring(0, 1);
-                    }
-                    if (board[i] == input.Substring(1, 1))
-                    {
-                        count2++;
-                        sym2 = input.Substring(1, 1);
+                        if (i >= board.Length / 2)
+                        {
+                            sym2 = sym02;
+                            count2++;
+                        }
+                        else
+                        {
+                            sym1 = sym02;
+                            count1++;
+                        }
                     }
                 }
                 if (count1 == 1 && count2 == 1)
