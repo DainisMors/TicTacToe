@@ -6,8 +6,11 @@ using System.Threading.Tasks;
 
 namespace TicTacToeV3
 {
-    public class Game
+    public enum Target
     {
-
+        ToFile = 1,
+        ToEmail,
+        ToPhone,
+        ToPrinter
     }
 }

@@ -58,7 +58,7 @@ namespace TicTacToeV3
             }
             return ret;
         }
-        public static void DisplayBoard(string[] input)
+        public static void DisplayBoard(string[] input, string[] log)
         {
             string displayInfo = "Jāievada koordinātes, piemēram 1a vai b3... utt, pēc tam Enter. Ievadot X spēle beidzas.";
             int half = board.Length / 2;
@@ -73,14 +73,14 @@ namespace TicTacToeV3
             {
                 info = info + board[i] + " | ";
             }
-            Console.WriteLine(info);
+            Console.WriteLine(info + "          " + log[0]);
 
             info = "----";
             for (int i = 0; i < half; i++)
             {
                 info = info + "----";
             }
-            Console.WriteLine(info);
+            Console.WriteLine(info + "          " + log[1]);
 
             for (int i = half; i < board.Length; i++)
             {
@@ -97,7 +97,7 @@ namespace TicTacToeV3
             Console.WriteLine(displayInfo);
 
         }
-        public static string[] FillDisplayInfo(string[] input, string user, string code)
+        public static string[] FillDisplayInfo(string[] input, string user, string code, string[] log)
         {
             int half = board.Length / 2;
             int counter = 0;
@@ -114,7 +114,7 @@ namespace TicTacToeV3
                             if (input[counter] == " ")
                             {
                                 input[counter] = user;
-                                Data.DisplayBoard(input);
+                                Data.DisplayBoard(input, log);
                             }
                             else
                             {
@@ -129,12 +129,6 @@ namespace TicTacToeV3
                 }
                 counter++;
             }
-/*
-Console.WriteLine("code:" + code + ", user:" + user);
-Console.WriteLine(input[0] + input[1] + input[2]);
-Console.WriteLine(input[3] + input[4] + input[5]);
-Console.WriteLine(input[6] + input[7] + input[8]);
-*/
             return input;
         }
 
