@@ -60,10 +60,15 @@ namespace TicTacToeV3
         }
         public static void DisplayBoard(string[] input)
         {
+            string displayInfo = "Jāievada koordinātes, piemēram 1a vai b3... utt, pēc tam Enter. Ievadot X spēle beidzas.";
             int half = board.Length / 2;
             string info = "  | ";
             int count = 0;
-            
+            Console.Clear();
+            Console.WriteLine("Tic Tac Toe, Version DM :)");
+            Console.WriteLine("");
+            Console.WriteLine("");
+
             for (int i = 0; i < half; i++)
             {
                 info = info + board[i] + " | ";
@@ -88,6 +93,9 @@ namespace TicTacToeV3
                 Console.WriteLine(info);
             }
             Console.WriteLine("");
+            Console.WriteLine("");
+            Console.WriteLine(displayInfo);
+
         }
         public static string[] FillDisplayInfo(string[] input, string user, string code)
         {
@@ -96,29 +104,37 @@ namespace TicTacToeV3
 
             for (int i = 0; i < half; i++)
             {
-                if(code.Substring(0, 1) == board[i])
+                if (code.Substring(0, 1) == board[i])
                 {
+                    //counter = half * i;
                     for (int i2 = half; i2 < board.Length; i2++)
                     {
                         if (code.Substring(1, 1) == board[i2])
                         {
-                            input[counter] = user;
+                            if (input[counter] == " ")
+                            {
+                                input[counter] = user;
+                                Data.DisplayBoard(input);
+                            }
+                            else
+                            {
+                                Console.WriteLine("Lūdzu uzmanīgāk! Lauciņš " + code + " ir jau izmantots!" );
+                                Console.WriteLine("Tavs gājiens tiek izlaists!");
+                                Console.WriteLine("");
+                            }
                             break;
                         }
+                        counter = counter + half;
                     }
-                    counter++;
                 }
-                counter += half; 
+                counter++;
             }
-Console.WriteLine(input[0]);
-Console.WriteLine(input[1]);
-Console.WriteLine(input[2]);
-Console.WriteLine(input[3]);
-            Console.WriteLine(input[4]);
-            Console.WriteLine(input[5]);
-            Console.WriteLine(input[6]);
-            Console.WriteLine(input[7]);
-            Console.WriteLine(input[8]);
+/*
+Console.WriteLine("code:" + code + ", user:" + user);
+Console.WriteLine(input[0] + input[1] + input[2]);
+Console.WriteLine(input[3] + input[4] + input[5]);
+Console.WriteLine(input[6] + input[7] + input[8]);
+*/
             return input;
         }
 
